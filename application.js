@@ -1,54 +1,35 @@
 this.GificiencyAPI = {};
 
 this.GificiencyAPI = (function() {
-  var getGifs, getRandomGif, init, randomizer, _gifs, _initialized;
-  _gifs = [];
-  _categories = [];
-  _initialized = false;
-  init = function() {
-    getGifs();
-    _initialized = true;
-    return this;
-  };
+
+  var randomizer, random;
+
   randomizer = function(collection) {
     var randomNumber;
     randomNumber = Math.floor(Math.random() * collection.length);
     return collection[randomNumber];
   };
-  getGifs = function() {
-    if (!_initialized) {
-      $.ajax({
-        url: 'http://gificiency.com/gifs.json',
-        async: false,
-        dataType: 'json',
-        success: function(json) {
-          return _gifs = json;
-        }
+
+  random = function() {
+    $.get('http://gificiency.com/gifs.json', function( data ) {
+
+      var gif = randomizer( JSON.parse(data) )['url'];
+
+      $('<img />').attr('src', gif).load(function() {
+        $(this).remove();
+        $('.gif')
+          .removeClass('is-loading')
+          .css('background-image', 'url(' + gif + ')');
       });
-    }
-    return _gifs;
+
+    });
   };
-  getRandomGif = function() {
-    var result;
-    result = randomizer(_gifs);
-    return result['url'];
-  };
+
   return {
-    init: init,
-    all: getGifs,
-    random: getRandomGif,
+    random: random
   };
+
 })();
 
 var _this = this;
-
-$(document).on('ready', function() {
-  var gif = _this.GificiencyAPI.init().random();
-
-  $('<img />').attr('src', gif).load(function() {
-    $(this).remove();
-    $('.gif')
-      .removeClass('is-loading')
-      .css('background-image', 'url(' + gif + ')');
-  });
-});
+$(function() { _this.GificiencyAPI.random(); });
