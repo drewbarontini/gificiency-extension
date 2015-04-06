@@ -1,25 +1,22 @@
-.gif, .cover {
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
+body {
+  background-color: white;
 }
 
 .gif {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
   transition: all 0.6s ease-in-out;
+  width: 100%;
   z-index: 1;
 }
 
 .gif.is-loading {
   opacity: 0;
-}
-
-.cover {
-  background-color: white;
 }
