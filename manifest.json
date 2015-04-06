@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Gificiency",
+  "name": "Gificiency New Tab",
   "version": "1.0.1",
-  "description": "Receive a beautiful, random GIF.",
+  "description": "Receive a beautiful, entertaining, random GIF in your new tab.",
   "permissions" : ["management"],
   "chrome_url_overrides" : {
       "newtab": "main.html"
