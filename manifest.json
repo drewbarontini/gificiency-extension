@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+  "name": "Gificiency",
+  "version": "0.0.0",
+  "description": "Receive a beautiful, random GIF.",
+  "permissions" : ["management"],
+  "chrome_url_overrides" : {
+      "newtab": "main.html"
+  },
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+             "128": "icon128.png" }
+ }
