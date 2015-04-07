@@ -5,7 +5,7 @@
   "description": "Receive a beautiful, entertaining, random GIF in your new tab.",
   "permissions": ["http://gificiency.com"],
   "chrome_url_overrides" : {
-      "newtab": "main.html"
+    "newtab": "main.html"
   },
   "icons": { "16": "icon16.png",
              "48": "icon48.png",
