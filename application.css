@@ -2,7 +2,7 @@ body {
   background-color: white;
 }
 
-.gif {
+.gif, .gif-link {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -19,4 +19,8 @@ body {
 
 .gif.is-loading {
   opacity: 0;
+}
+
+.gif-link {
+  display: block;
 }

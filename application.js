@@ -21,7 +21,7 @@ this.GificiencyAPI = (function() {
           .removeClass('is-loading')
           .attr('data-url', gif)
           .css('background-image', 'url(' + gif + ')')
-          .wrap('<a href="' + gif + '" target="_blank"></a>')
+          .append('<a class="gif-link" href="' + gif + '" target="_blank"></a>')
       });
 
     });
@@ -34,4 +34,4 @@ this.GificiencyAPI = (function() {
 })();
 
 var _this = this;
-$(function() { _this.GificiencyAPI.random(); });
+$(function() { _this.GificiencyAPI.random() });
