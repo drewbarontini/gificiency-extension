@@ -19,7 +19,9 @@ this.GificiencyAPI = (function() {
         $(this).remove();
         $('.gif')
           .removeClass('is-loading')
-          .css('background-image', 'url(' + gif + ')');
+          .attr('data-url', gif)
+          .css('background-image', 'url(' + gif + ')')
+          .wrap('<a href="' + gif + '" target="_blank"></a>')
       });
 
     });
